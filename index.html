@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <script type="text/javascript" >
+
+      var ScreenshotClass = require("@brightsign/screenshot");
+      var screenshot = new ScreenshotClass();
+
+      cconsole.log("Executing javascript");
+
+      function takeAsyncScreenshot(args) {
+          screenshot.asyncCapture(args).then().catch();
+      };
+
+      screenshotParams = {};
+      screenshotParams.fileName = "SD:/screenshot.jpg";
+      screenshotParams.quality = 75;
+
+      setInterval(takeAsyncScreenshot(screenshotParams), 100);
+
+    </script>
+    <style media="screen">
+      body{
+        background-color: white;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Hello!</h1>
+  </body>
+</html>
